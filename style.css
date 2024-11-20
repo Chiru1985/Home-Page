@@ -1,0 +1,261 @@
+/* CSS reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/* Add this to your existing CSS */
+body {
+  background-color: #ffe6e6; /* Light gray background */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, system-ui, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, system-ui, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* --- */
+
+/* general */
+header,
+main {
+  padding: 2rem;
+}
+
+header h1 {
+  font-size: 3em;
+}
+
+main h2 {
+  font-size: 2em;
+  margin: 1rem;
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+  margin: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+svg:hover {
+  transform: scale(1.3);
+}
+
+picture > * {
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  background: hsla(213, 72%, 65%, 1);
+
+  background: linear-gradient(
+    270deg,
+    hsla(213, 72%, 65%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    270deg,
+    hsla(213, 72%, 65%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    270deg,
+    hsla(213, 72%, 65%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#65A0E6", endColorstr="#FFFFFF", GradientType=1 );
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+footer {
+  background: hsla(213, 72%, 65%, 0.5);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px -3px 5px 0px;
+}
+
+#jeju-2024 {
+  padding: 2rem;
+}
+
+#contactContainer {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+#contactContainer h3 {
+  font-size: 2em;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+}
+
+#summary {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1rem;
+  height: 50%;
+  font-size: 25px;
+
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  #container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projectCard {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(39, 37, 37, 0.23) 0px 3px 6px;
+  opacity: 0;
+  border-radius: 5px;
+  transition: opacity 1s ease-in-out 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectCard > h3,
+.projectCard > p {
+  padding: 0.5rem 1rem;
+}
+
+.projectCard > a {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  header picture {
+    padding: 1rem;
+  }
+
+  header h1 {
+    position: absolute;
+    top: 7%;
+    left: 15%;
+    font-size: 2em;
+  }
+
+  header {
+    display: block;
+  }
+
+  main > h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  footer {
+    display: block;
+    padding: 0;
+  }
+
+  #jeju-2024 {
+    padding: 0;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 1100px) {
+  .projectCard > a > span {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .projectCard > a:hover > span {
+    opacity: 1;
+    animation: slide-in 0.6s ease-in-out;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  header {
+    padding: 6rem;
+  }
+}
